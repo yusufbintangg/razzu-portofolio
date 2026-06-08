@@ -66,7 +66,7 @@ export function HeroSection() {
         className="px-5 sm:px-10 xl:px-0"
         style={{
           position: "absolute",
-          bottom: "12vh",
+          bottom: "1vh",
           left: "50%",
           transform: "translateX(-50%)",
           width: "min(1280px, 100%)",
