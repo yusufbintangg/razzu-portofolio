@@ -6,110 +6,137 @@ export function FooterSection() {
   return (
     <>
       {/* CTA Banner */}
-      <section style={{ width: "100%", padding: "80px 0", background: BG_MAIN }}>
+      <section
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          width: "100%",
+          background: "#000908",
+          padding: "100px 0 40px",
+        }}
+      >
+        {/* Glow bawah */}
         <div
-          className="px-5 sm:px-10 xl:px-0"
           style={{
+            position: "absolute",
+            left: "50%",
+            bottom: "-250px",
+            transform: "translateX(-50%)",
+            width: "1200px",
+            height: "600px",
+            borderRadius: "50%",
+            background: "rgba(0, 180, 120, 0.45)",
+            filter: "blur(120px)",
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Content */}
+        <div
+          style={{
+            position: "relative",
+            zIndex: 2,
             maxWidth: 1280,
             margin: "0 auto",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 28,
-            textAlign: "center",
-            boxSizing: "border-box",
+            padding: "0 24px",
           }}
         >
-          <p
-            style={{
-              fontFamily: PJ,
-              fontWeight: 600,
-              fontSize: "clamp(28px, 5vw, 72px)",
-              color: "white",
-              lineHeight: 1.2,
-              margin: 0,
-            }}
-          >
-            Retain More Viewers with Professional Short-Form Editing.
-          </p>
-          <button
+          {/* CTA */}
+          <div
             style={{
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
-              gap: 10,
-              background: "#090b0b",
-              border: "1px solid rgba(255,255,255,0.15)",
-              borderRadius: 33,
-              padding: "12px 12px 12px 28px",
-              cursor: "pointer",
-              transition: "background 0.2s",
-            }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLButtonElement).style.background = "#1a6b3a")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLButtonElement).style.background = "#090b0b")}
-          >
-            <span style={{ fontFamily: PJ, fontWeight: 500, fontSize: "clamp(16px, 2vw, 20px)", color: "white" }}>
-              Start Your Project
-            </span>
-            <IconBtn>
-              <ArrowUpRight size={12} color="#151B1D" />
-            </IconBtn>
-          </button>
-        </div>
-      </section>
-
-      {/* Footer bar */}
-      <footer
-        style={{ width: "100%", background: BG_FOOTER, padding: "32px 0 40px" }}
-      >
-        <div
-          className="px-5 sm:px-10 xl:px-0 flex flex-col sm:flex-row"
-          style={{
-            maxWidth: 1280,
-            margin: "0 auto",
-            alignItems: "flex-end",
-            justifyContent: "space-between",
-            gap: "clamp(8px, 3vw, 20px)",
-            boxSizing: "border-box",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: PJ,
-              fontWeight: 700,
-              fontSize: "clamp(48px, 10vw, 120px)",
-              color: "white",
-              lineHeight: 0.9,
-              margin: 0,
+              textAlign: "center",
             }}
           >
-            razzu.
-          </p>
+            <h2
+              style={{
+                fontFamily: PJ,
+                fontWeight: 600,
+                fontSize: "clamp(32px, 5vw, 72px)",
+                color: "#fff",
+                lineHeight: 1.1,
+                maxWidth: 900,
+                margin: 0,
+              }}
+            >
+              Retain More Viewers with
+              <br />
+              Professional Short-Form Editing.
+            </h2>
 
-          <div
-            className="flex"
-            style={{ alignItems: "center", gap: 14, paddingBottom: "clamp(4px, 1vw, 10px)", flexWrap: "wrap" }}
-          >
-            {socials.map((item, i) => (
+            <button
+              style={{
+                marginTop: 32,
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+                background: "#070909",
+                border: "1px solid rgba(255,255,255,0.1)",
+                borderRadius: 999,
+                padding: "12px 12px 12px 24px",
+                cursor: "pointer",
+              }}
+            >
               <span
-                key={i}
                 style={{
+                  color: "#fff",
                   fontFamily: PJ,
-                  fontWeight: 600,
-                  fontSize: "clamp(13px, 1.4vw, 18px)",
-                  color: item === "|" ? "rgba(255,255,255,0.4)" : "white",
-                  lineHeight: "28px",
-                  cursor: item !== "|" ? "pointer" : "default",
-                  transition: item !== "|" ? "opacity 0.2s" : undefined,
                 }}
-                onMouseEnter={item !== "|" ? (e) => ((e.currentTarget as HTMLSpanElement).style.opacity = "0.6") : undefined}
-                onMouseLeave={item !== "|" ? (e) => ((e.currentTarget as HTMLSpanElement).style.opacity = "1") : undefined}
               >
-                {item}
+                Start Your Project
               </span>
-            ))}
+
+              <IconBtn>
+                <ArrowUpRight size={12} color="#151B1D" />
+              </IconBtn>
+            </button>
+          </div>
+
+          {/* Footer */}
+          <div
+            style={{
+              marginTop: 140,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-end",
+              flexWrap: "wrap",
+              gap: 24,
+            }}
+          >
+            <h1
+              style={{
+                margin: 0,
+                color: "#fff",
+                fontFamily: PJ,
+                fontWeight: 700,
+                fontSize: "clamp(64px, 10vw, 120px)",
+                lineHeight: 0.9,
+              }}
+            >
+              razzu.
+            </h1>
+
+            <div
+              style={{
+                display: "flex",
+                gap: 14,
+                alignItems: "center",
+                color: "#fff",
+                fontFamily: PJ,
+                fontSize: 14,
+              }}
+            >
+              <span>TIKTOK</span>
+              <span>|</span>
+              <span>INSTAGRAM</span>
+              <span>|</span>
+              <span>YOUTUBE</span>
+            </div>
           </div>
         </div>
-      </footer>
+      </section>
     </>
   );
 }

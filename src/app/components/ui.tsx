@@ -2,7 +2,23 @@ import { useEffect, useState } from "react";
 import svgPaths from "../../imports/LandingPageDesktop/svg-epgds4kw6n";
 
 export const PJ = "'Plus Jakarta Sans', sans-serif";
-export const BG_MAIN = "#0a1f0f";
+export const BG_MAIN = `
+radial-gradient(
+  800px 400px at 8% 55%,
+  rgba(0, 120, 95, 0.35) 0%,
+  transparent 60%
+),
+radial-gradient(
+  700px 350px at 70% 20%,
+  rgba(0, 120, 95, 0.25) 0%,
+  transparent 60%
+),
+linear-gradient(
+  180deg,
+  #000b09 0%,
+  #000807 100%
+)
+`;
 export const BG_PRODUCT = "#003D34";
 export const BG_FOOTER = "#090b0b";
 

@@ -84,7 +84,16 @@ export function ProductSection() {
       style={{
         width: "100%",
         padding: "100px 0 80px",
-        background: BG_PRODUCT,
+        backgroundColor: "#001512",
+    position: "absolute",
+    inset: 0,
+    backgroundColor: "#001512",
+    backgroundImage: `
+      radial-gradient(at 70% 65%, rgba(0, 200, 140, 0.28) 0px, transparent 45%),
+      radial-gradient(at 20% 100%, rgba(0, 140, 110, 0.22) 0px, transparent 40%),
+      radial-gradient(at 80% 10%, rgba(0, 90, 70, 0.12) 0px, transparent 35%)
+    `,
+    filter: "blur(0px)",
         position: "relative",
         overflow: "hidden",
         scrollMarginTop: 80,

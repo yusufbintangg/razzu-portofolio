@@ -25,16 +25,18 @@ export function AboutSection() {
 
   return (
     <section
-      id="about"
-      style={{
-        width: "100%",
-        padding: "100px 0 80px",
-        background: BG_MAIN,
-        position: "relative",
-        overflow: "hidden",
-        scrollMarginTop: 80,
-      }}
-    >
+  id="about"
+  style={{
+    width: "100%",
+    padding: "100px 0 80px",
+    background: BG_MAIN,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    position: "relative",
+    overflow: "hidden",
+    scrollMarginTop: 80,
+  }}
+>
       {/* Glow */}
       <div
         style={{

@@ -1,6 +1,6 @@
 import svgPaths from "../../../imports/LandingPageDesktop/svg-epgds4kw6n";
 import imgHero from "figma:asset/pprazzuzoomout.jpeg";
-import { PJ, IconBtn, useWindowWidth } from "../ui";
+import { PJ, BG_MAIN, IconBtn, useWindowWidth } from "../ui";
 
 export function HeroSection() {
   const w = useWindowWidth();
@@ -27,6 +27,7 @@ export function HeroSection() {
             width: "100%",
             height: "90%",
             objectFit: "cover",
+            transform: "scale(1.40)",
             objectPosition: "center 100%",
           } : {
             position: "absolute",
@@ -56,7 +57,7 @@ export function HeroSection() {
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(to top, rgba(10,31,15,0.97) 0%, rgba(10,31,15,0.55) 30%, transparent 60%)",
+            "linear-gradient(to top, #000b09  0%, rgba(10,31,15,0.55) 30%, transparent 60%)",
         }}
       />
 
@@ -65,7 +66,7 @@ export function HeroSection() {
         className="px-5 sm:px-10 xl:px-0"
         style={{
           position: "absolute",
-          bottom: "6vh",
+          bottom: "12vh",
           left: "50%",
           transform: "translateX(-50%)",
           width: "min(1280px, 100%)",
@@ -122,11 +123,30 @@ export function HeroSection() {
               display: "flex",
               alignItems: "center",
               gap: 10,
-              background: "rgba(9,11,11,0.85)",
-              border: "none",
               borderRadius: 33,
               padding: "10px 10px 10px 22px",
               cursor: "pointer",
+              position: "relative",
+              zIndex: 1,
+
+              /* samain style kayak navbar */
+              background:
+                "linear-gradient(135deg, rgba(20, 20, 25, 0.4) 0%, rgba(10, 10, 12, 0.25) 100%)",
+              backdropFilter: "blur(24px) saturate(160%)",
+              WebkitBackdropFilter: "blur(24px) saturate(160%)",
+              border: "1px solid rgba(255, 255, 255, 0.15)",
+              boxShadow: `
+                0 16px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.3),
+                inset 0 -1px 1px rgba(0, 0, 0, 0.1)
+              `,
+              transition: "all 0.25s cubic-bezier(0.4, 0, 0.2, 1)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.02)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
             }}
           >
             <span
