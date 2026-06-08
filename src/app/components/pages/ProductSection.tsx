@@ -5,7 +5,7 @@ import imgProd3 from "figma:asset/b52e2e22de875bfb55c8b3991da291619e6d3cd6.png";
 import imgProd4 from "figma:asset/f3c403b5568a735f8693fa7904dbadd52b4d8c71.png";
 import imgProd5 from "figma:asset/147e12048d770b109230e81432f99c9d081c7a09.png";
 import imgProd6 from "figma:asset/69b600b0903a6497ffae929594165d9bb3967805.png";
-import { PJ, BG_PRODUCT, SeeAllButton } from "../ui";
+import { PJ, BG_MAIN, SeeAllButton } from "../ui";
 
 const products = [
   { img: imgProd1, title: "5000 Template Desain dan Video Promo, IG FB Format PPT Power..." },
@@ -84,17 +84,7 @@ export function ProductSection() {
       style={{
         width: "100%",
         padding: "100px 0 80px",
-        backgroundColor: "#001512",
-        position: "absolute",
-        inset: 0,
-        backgroundColor: "#001512",
-        backgroundImage: `
-          radial-gradient(at 70% 65%, rgba(0, 200, 140, 0.28) 0px, transparent 45%),
-          radial-gradient(at 20% 100%, rgba(0, 140, 110, 0.22) 0px, transparent 40%),
-          radial-gradient(at 80% 10%, rgba(0, 90, 70, 0.12) 0px, transparent 35%)
-        `,
-    filter: "blur(0px)",
-        position: "relative",
+        background: BG_MAIN,
         overflow: "hidden",
         scrollMarginTop: 80,
       }}
