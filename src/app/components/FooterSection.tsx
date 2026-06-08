@@ -25,7 +25,7 @@ export function FooterSection() {
             width: "1200px",
             height: "600px",
             borderRadius: "50%",
-            background: "rgba(0, 180, 120, 0.45)",
+            background: "rgba(0, 120, 95, 0.35) ",
             filter: "blur(120px)",
             pointerEvents: "none",
           }}
