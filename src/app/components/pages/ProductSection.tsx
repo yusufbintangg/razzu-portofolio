@@ -80,15 +80,16 @@ function ProductCard({ img, title }: { img: string; title: string }) {
 export function ProductSection() {
   return (
     <section
-      id="product"
-      style={{
-        width: "100%",
-        padding: "100px 0 80px",
-        background: BG_MAIN,
-        overflow: "hidden",
-        scrollMarginTop: 80,
-      }}
-    >
+  id="product"
+  style={{
+    position: "relative",  // ← tambah ini
+    width: "100%",
+    padding: "100px 0 80px",
+    background: BG_MAIN,
+    overflow: "hidden",
+    scrollMarginTop: 80,
+  }}
+>
       {/* Blobs */}
       <div
         style={{

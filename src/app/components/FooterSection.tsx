@@ -22,7 +22,7 @@ export function FooterSection() {
             left: "50%",
             bottom: "-250px",
             transform: "translateX(-50%)",
-            width: "1200px",
+            width: "min(1200px, 100vw)",  // ganti dari width: "1200px"
             height: "600px",
             borderRadius: "50%",
             background: "rgba(0, 120, 95, 0.35) ",

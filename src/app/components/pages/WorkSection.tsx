@@ -1,39 +1,105 @@
+import { useRef, useState, useEffect } from "react";
 import svgPaths from "../../../imports/LandingPageDesktop/svg-epgds4kw6n";
 import imgIPhoneFrame from "figma:asset/6f59004e8b74c237545d46a63e409dc54388a516.png";
-import imgThumb1 from "figma:asset/cd62211c8d7f569379fcd49837a58e6d5162852e.png";
-import imgThumb2 from "figma:asset/2d98715884f56d8617b14ee5ee099ce974f889b1.png";
-import imgThumb3 from "figma:asset/e21cd2a15ca80523e959c0c11192eec8b474b8f9.png";
-import imgThumb4 from "figma:asset/4feb98a662d728156532c4e479fccf7fb59920c0.png";
-import imgThumb5 from "figma:asset/c37bb386587ac93519a24ca6a4dd346b81a6ada0.png";
-import imgThumb6 from "figma:asset/a7eeffba86f877396943bb2224cf6cf0b4536752.png";
-import imgThumb7 from "figma:asset/13a83e63292a465cc3e7079b42f710cc30fbc3ca.png";
-import imgThumb8 from "figma:asset/bbc7e6f5fd74afdf3af0874232dbdefbf0112e71.png";
-import imgThumb9 from "figma:asset/2d16774ca45bb7a177d9cae0f2b705a1ff0c6aad.png";
 import { PJ, BG_MAIN, SeeAllButton, PlayIcon, useWindowWidth } from "../ui";
 
 const phones = [
-  { thumb: imgThumb1, featured: false },
-  { thumb: imgThumb2, featured: true },
-  { thumb: imgThumb3, featured: false },
-  { thumb: imgThumb4, featured: false },
-  { thumb: imgThumb5, featured: false },
-  { thumb: imgThumb6, featured: false },
-  { thumb: imgThumb7, featured: false },
-  { thumb: imgThumb8, featured: false },
-  { thumb: imgThumb9, featured: false },
+  {
+    video:
+      "https://res.cloudinary.com/dflurcp1z/video/upload/v1782097002/razzu-portfolio/konten-endorse.mov",
+    tiktokUrl: "https://www.tiktok.com/@razzu", // ganti sesuai link tiktok video ini
+    featured: false,
+  },
+  {
+    video:
+      "https://res.cloudinary.com/dflurcp1z/video/upload/v1782096323/razzu-portfolio/konten-5.mp4",
+    tiktokUrl: "https://www.tiktok.com/@razzu",
+    featured: true,
+  },
+  {
+    video:
+      "https://res.cloudinary.com/dflurcp1z/video/upload/v1782097376/razzu-portfolio/konten-8.mp4",
+    tiktokUrl: "https://www.tiktok.com/@razzu",
+    featured: false,
+  },
+  {
+    video:
+      "https://res.cloudinary.com/dflurcp1z/video/upload/v1782095717/razzu-portfolio/konten-1.mp4",
+    tiktokUrl: "https://www.tiktok.com/@razzu",
+    featured: false,
+  }
+  // tambahin sisanya di sini setelah video lain selesai diupload
 ];
 
+
+
+function MuteIcon({ muted, size }: { muted: boolean; size: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+      <path
+        d="M11 5L6 9H2v6h4l5 4V5z"
+        fill="white"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      {muted ? (
+        <path
+          d="M23 9l-6 6M17 9l6 6"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      ) : (
+        <path
+          d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      )}
+    </svg>
+  );
+}
+
+function TikTokIcon({ size }: { size: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+      <path
+        d="M16.5 3c.3 2.1 1.7 3.6 4 3.8v2.9c-1.4 0-2.7-.4-3.9-1.2v6.6a5.6 5.6 0 1 1-4.9-5.6v2.9a2.7 2.7 0 1 0 2 2.6V3h2.8z"
+        fill="white"
+      />
+    </svg>
+  );
+}
+
 function PhoneMockup({
-  thumb,
-  featured = false,
-  width,
-  height,
+  video, tiktokUrl, featured = false, width, height,
+  muted, onToggleMute,  // ← tambah ini
 }: {
-  thumb: string;
-  featured?: boolean;
-  width: number;
-  height: number;
+  video: string; tiktokUrl: string; featured?: boolean;
+  width: number; height: number;
+  muted: boolean; onToggleMute: () => void;
 }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onToggleMute();
+  };
+
+  const openTiktok = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    window.open(tiktokUrl, "_blank", "noopener,noreferrer");
+  };
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = muted;
+      if (!muted) videoRef.current.play().catch(() => {});
+    }
+  }, [muted]);
+
   return (
     <div
       style={{
@@ -58,21 +124,25 @@ function PhoneMockup({
           zIndex: 0,
         }}
       />
-      {/* Thumbnail */}
+      {/* Video */}
       <div
         style={{
           position: "absolute",
-          top: 0, bottom: 0,
-          left: "-1.79%", right: "-1.54%",
+          top: 0,
+          bottom: 0,
+          left: "-1.2%",
+          right: "-1.2%",
           overflow: "hidden",
-          mixBlendMode: featured ? "normal" : "luminosity",
-          opacity: featured ? 1 : 0.5,
           zIndex: 1,
         }}
       >
-        <img
-          alt=""
-          src={thumb}
+        <video
+          ref={videoRef}
+          src={video}
+          autoPlay
+          loop
+          muted
+          playsInline
           style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
         />
       </div>
@@ -89,22 +159,56 @@ function PhoneMockup({
       >
         <img alt="" src={imgIPhoneFrame} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </div>
-      {/* Play icon */}
-      <div
+      {/* Mute button */}
+      <button
+        onClick={toggleMute}
         style={{
-          position: "absolute", inset: 0, zIndex: 4,
-          display: "flex", flexDirection: "column",
-          alignItems: "center", justifyContent: "center",
-          gap: 10,
+          position: "absolute",
+          bottom: 14,
+          left: 14,
+          zIndex: 4,
+          width: 34,
+          height: 34,
+          borderRadius: "50%",
+          background: "rgba(0,0,0,0.45)",
+          border: "none",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: "pointer",
         }}
+        aria-label={muted ? "Unmute" : "Mute"}
       >
-        <PlayIcon size={Math.round(width * 0.185)} />
-      </div>
+        <MuteIcon muted={muted} size={16} />
+      </button>
+      {/* TikTok button */}
+      <button
+        onClick={openTiktok}
+        style={{
+          position: "absolute",
+          bottom: 14,
+          right: 14,
+          zIndex: 4,
+          width: 34,
+          height: 34,
+          borderRadius: "50%",
+          background: "rgba(0,0,0,0.45)",
+          border: "none",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: "pointer",
+        }}
+        aria-label="Open on TikTok"
+      >
+        <TikTokIcon size={16} />
+      </button>
     </div>
   );
 }
 
 export function WorkSection() {
+  const [unmuteIdx, setUnmuteIdx] = useState<number | null>(null);
   const w = useWindowWidth();
   const sidePad = w < 640 ? 20 : w < 1024 ? 40 : 80;
   // biar jaraknya gak terlalu mepet
@@ -115,13 +219,13 @@ export function WorkSection() {
 
   return (
     <section
-      id="work"
-      style={{ width: "100%", padding: "100px 0 80px", background: BG_MAIN, scrollMarginTop: 80 }}
-    >
-      <div
-        className="px-5 sm:px-10 xl:px-0"
-        style={{ maxWidth: 1280, margin: "0 auto", boxSizing: "border-box" }}
-      >
+          id="work"
+          style={{ width: "100%", padding: "100px 0 80px", background: BG_MAIN, scrollMarginTop: 80 }}
+        >
+              <div
+          className="px-5 sm:px-10 xl:px-0"
+          style={{ maxWidth: 1280, margin: "0 auto", boxSizing: "border-box" }}
+        >
         {/* Header */}
         <div
           style={{
@@ -172,10 +276,13 @@ export function WorkSection() {
           {phones.map((phone, i) => (
             <PhoneMockup
               key={i}
-              thumb={phone.thumb}
+              video={phone.video}
+              tiktokUrl={phone.tiktokUrl}
               featured={phone.featured}
               width={phoneW}
               height={phoneH}
+              muted={unmuteIdx !== i}
+              onToggleMute={() => setUnmuteIdx(unmuteIdx === i ? null : i)}
             />
           ))}
         </div>

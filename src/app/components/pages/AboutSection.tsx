@@ -41,7 +41,7 @@ export function AboutSection() {
       <div
         style={{
           position: "absolute",
-          width: "130%", height: 380,
+          width: "100%", height: 380,
           background: "linear-gradient(to right, rgba(1,61,47,0.3), rgba(16,32,32,0.2), rgba(0,61,52,0.3))",
           top: "50%", left: "50%",
           transform: "translate(-50%, -50%)",
