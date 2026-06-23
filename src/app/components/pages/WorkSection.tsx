@@ -224,7 +224,7 @@ export function WorkSection() {
   const w = useWindowWidth();
   const sidePad = w < 640 ? 20 : w < 1024 ? 40 : 80;
   // biar jaraknya gak terlalu mepet
-  const gap = w < 480 ? 28 : w < 768 ? 32 : w < 1024 ? 40 : 64;
+  const gap = w < 480 ? 28 : w < 768 ? 32 : w < 1024 ? 40 : 124;
   const containerW = Math.min(w, 1280) - sidePad * 2;
   const phoneW = Math.min(Math.floor((containerW - gap * 2) / 3), 280);
   const phoneH = Math.round(phoneW * (600 / 280));
