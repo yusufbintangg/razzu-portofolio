@@ -39,8 +39,25 @@ const phones = [
       "https://res.cloudinary.com/dflurcp1z/video/upload/v1782182322/razzu-portfolio/masdiibae-20.mp4",
     tiktokUrl: "https://www.tiktok.com/@razzu",
     featured: false,
+  },
+  {
+    video:
+      "https://res.cloudinary.com/dflurcp1z/video/upload/v1782199179/razzu-portfolio/fixpole.mp4",
+    tiktokUrl: "https://www.tiktok.com/@razzu",
+    featured: false,
+  },
+  {
+    video:
+      "https://res.cloudinary.com/dflurcp1z/video/upload/v1782199971/razzu-portfolio/profil-fix.mov",
+    tiktokUrl: "https://www.tiktok.com/@razzu",
+    featured: false,
+  },
+  {
+    video:
+      "https://res.cloudinary.com/dflurcp1z/video/upload/v1782200588/razzu-portfolio/project-malay.mp4",
+    tiktokUrl: "https://www.tiktok.com/@razzu",
+    featured: false,
   }
-  // tambahin sisanya di sini setelah video lain selesai diupload
 ];
 
 
