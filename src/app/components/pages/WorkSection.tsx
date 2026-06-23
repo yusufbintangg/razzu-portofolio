@@ -27,6 +27,18 @@ const phones = [
       "https://res.cloudinary.com/dflurcp1z/video/upload/v1782095717/razzu-portfolio/konten-1.mp4",
     tiktokUrl: "https://www.tiktok.com/@razzu",
     featured: false,
+  },
+  {
+    video:
+      "https://res.cloudinary.com/dflurcp1z/video/upload/v1782183116/razzu-portfolio/lomba-project.mp4",
+    tiktokUrl: "https://www.tiktok.com/@razzu",
+    featured: false,
+  },
+  {
+    video:
+      "https://res.cloudinary.com/dflurcp1z/video/upload/v1782182322/razzu-portfolio/masdiibae-20.mp4",
+    tiktokUrl: "https://www.tiktok.com/@razzu",
+    featured: false,
   }
   // tambahin sisanya di sini setelah video lain selesai diupload
 ];

@@ -66,7 +66,10 @@ export function FooterSection() {
               Professional Short-Form Editing.
             </h2>
 
-            <button
+            <a
+              href="https://wa.me/6285866845223"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 marginTop: 32,
                 display: "flex",
@@ -77,12 +80,28 @@ export function FooterSection() {
                 borderRadius: 999,
                 padding: "12px 12px 12px 24px",
                 cursor: "pointer",
+                textDecoration: "none",
+                position: "relative",
+                overflow: "hidden",
+                transition: "transform 0.2s ease, border-color 0.2s ease, background 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-1px) scale(1.03)";
+                e.currentTarget.style.background = "rgba(26, 107, 58, 0.35)";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.background = "#070909";
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
               }}
             >
               <span
                 style={{
                   color: "#fff",
                   fontFamily: PJ,
+                  position: "relative",
+                  zIndex: 1,
                 }}
               >
                 Start Your Project
@@ -91,7 +110,22 @@ export function FooterSection() {
               <IconBtn>
                 <ArrowUpRight size={12} color="#151B1D" />
               </IconBtn>
-            </button>
+
+              {/* shine sweep */}
+              <span
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  transform: "translateX(-120%) skewX(-20deg)",
+                  background:
+                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.22) 50%, transparent 100%)",
+                  transition: "transform 0.7s ease",
+                }}
+                className="wa-shine"
+              />
+            </a>
+
           </div>
 
           {/* Footer */}

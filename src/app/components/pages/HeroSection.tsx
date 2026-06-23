@@ -118,7 +118,10 @@ export function HeroSection() {
 
         {/* CTA buttons */}
         <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
-          <button
+          <a
+            href="https://wa.me/6285866845223"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               display: "flex",
               alignItems: "center",
@@ -141,16 +144,19 @@ export function HeroSection() {
                 inset 0 -1px 1px rgba(0, 0, 0, 0.1)
               `,
               transition: "all 0.25s cubic-bezier(0.4, 0, 0.2, 1)",
+              textDecoration: "none",
+              overflow: "hidden",
+              transform: "translateZ(0)",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.02)";
+              e.currentTarget.style.transform = "translateY(-1px) scale(1.03)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.transform = "translateY(0) scale(1)";
             }}
           >
             <span
-              style={{ fontFamily: PJ, fontWeight: 500, fontSize: "clamp(15px, 2vw, 20px)", color: "white" }}
+              style={{ fontFamily: PJ, fontWeight: 500, fontSize: "clamp(15px, 2vw, 20px)", color: "white", position: "relative", zIndex: 1 }}
             >
               WhatsApp
             </span>
@@ -172,7 +178,22 @@ export function HeroSection() {
                 />
               </svg>
             </IconBtn>
-          </button>
+
+            {/* shine sweep */}
+            <span
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                inset: 0,
+                transform: "translateX(-120%) skewX(-20deg)",
+                background:
+                  "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.22) 50%, transparent 100%)",
+                transition: "transform 0.7s ease",
+              }}
+              className="wa-shine"
+            />
+          </a>
+
 
           <a
             href="#work"

@@ -138,8 +138,11 @@ export function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <button
+        <a
           className="hidden md:flex"
+          href="https://wa.me/6285866845223"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             position: "relative",
             zIndex: 1,
@@ -155,25 +158,42 @@ export function Navbar() {
             WebkitBackdropFilter: "blur(4px)",
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.15)",
             transition: "all 0.2s ease",
+            textDecoration: "none",
+            transform: "translateZ(0)",
+            overflow: "hidden",
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.background = "rgba(26, 107, 58, 0.8)";
             e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.35)";
-            e.currentTarget.style.transform = "scale(1.02)";
+            e.currentTarget.style.transform = "translateY(-1px) scale(1.03)";
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.background = "rgba(9, 11, 11, 0.5)";
             e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.15)";
-            e.currentTarget.style.transform = "scale(1)";
+            e.currentTarget.style.transform = "translateY(0) scale(1)";
           }}
         >
-          <span style={{ fontFamily: PJ, fontWeight: 500, fontSize: 15, color: "white" }}>
+          <span style={{ fontFamily: PJ, fontWeight: 500, fontSize: 15, color: "white", position: "relative", zIndex: 1 }}>
             Get in touch
           </span>
           <IconBtn>
             <ArrowUpRight size={12} color="#151B1D" />
           </IconBtn>
-        </button>
+          {/* shine sweep */}
+          <span
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              inset: 0,
+              transform: "translateX(-120%) skewX(-20deg)",
+              background:
+                "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.22) 50%, transparent 100%)",
+              transition: "transform 0.7s ease",
+            }}
+            className="wa-shine"
+          />
+        </a>
+
 
         {/* Mobile: spacer */}
         <div className="flex md:hidden" style={{ flex: 1, position: "relative", zIndex: 1 }} />
@@ -245,7 +265,10 @@ export function Navbar() {
             );
           })}
           
-          <button
+          <a
+            href="https://wa.me/6285866845223"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               marginTop: 20,
               display: "flex",
@@ -257,16 +280,44 @@ export function Navbar() {
               padding: "12px 12px 12px 28px",
               cursor: "pointer",
               backdropFilter: "blur(10px)",
+              textDecoration: "none",
+              position: "relative",
+              overflow: "hidden",
+              transition: "transform 0.2s ease, background 0.2s ease, border-color 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(26, 107, 58, 0.8)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.35)";
+              e.currentTarget.style.transform = "translateY(-1px) scale(1.03)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "rgba(9, 11, 11, 0.7)";
+              e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)";
+              e.currentTarget.style.transform = "translateY(0) scale(1)";
             }}
           >
-            <span style={{ fontFamily: PJ, fontWeight: 500, fontSize: 18, color: "white" }}>
+            <span style={{ fontFamily: PJ, fontWeight: 500, fontSize: 18, color: "white", position: "relative", zIndex: 1 }}>
               Get in touch
             </span>
             <IconBtn>
-
               <ArrowUpRight size={12} color="#151B1D" />
             </IconBtn>
-          </button>
+
+            {/* shine sweep */}
+            <span
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                inset: 0,
+                transform: "translateX(-120%) skewX(-20deg)",
+                background:
+                  "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.22) 50%, transparent 100%)",
+                transition: "transform 0.7s ease",
+              }}
+              className="wa-shine"
+            />
+          </a>
+
         </div>
       )}
     </>
