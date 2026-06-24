@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import { BG_MAIN } from "../ui";
 
 interface VideoClip {
   url: string;
@@ -277,7 +278,7 @@ export function ProductSection() {
   };
 
   return (
-    <section id="product" className="w-full" style={{ padding: "100px 0 80px", background: "#000908", scrollMarginTop: 80 }}>
+    <section id="product" className="w-full" style={{ padding: "100px 0 80px", background: BG_MAIN, scrollMarginTop: 80 }}>
       <div className="px-5 sm:px-10 xl:px-0" style={{ maxWidth: 1280, margin: "0 auto", boxSizing: "border-box" }}>
         <p className="text-white font-semibold mb-14" style={{ fontSize: "clamp(32px, 5vw, 60px)", lineHeight: 1.3 }}>
           My Clients
