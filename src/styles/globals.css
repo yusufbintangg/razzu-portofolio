@@ -8,3 +8,9 @@ html, body {
   width: 100%;
 }
 
+/* Background default (selain HeroSection & FooterSection yang punya style sendiri) */
+body {
+  background: #000;
+}
+
+

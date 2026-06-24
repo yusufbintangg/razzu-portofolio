@@ -4,15 +4,21 @@ import { PJ, BG_MAIN } from "../ui";
 const testimonials = [
   {
     quote:
-      '"Absolute lifesaver! I had a tight deadline for a brand sponsorship and needed a TikTok edited within 24 hours. Not only did she deliver it ahead of schedule, but the pacing and trendy transitions were absolutely spot on.',
-    author: "William Wil",
+      '"Wissh keren kak 😍 Makasih banyak ya, hasilnya sesuai banget sama yang aku mau. Bahkan aku sampai izin save nomor karena puas sama hasil editannya. Fast response juga walaupun lagi ada kendala."',
+    author: "Iputu Prema Suryawa",
     role: "CEO",
   },
   {
     quote:
-      '"She transformed my raw footage into a viral-worthy reel in record time. The attention to detail and understanding of the algorithm is unmatched. Highly recommend Razzu for any short-form content.',
-    author: "Sarah Chen",
-    role: "Brand Manager",
+      '"Alhamdulillah setelah kualitas editing konten dinaikin, hasilnya mulai kerasa banget. Sebulan ini retur cuma 1, dan itu pun bukan karena kualitas kontennya. Ternyata editing memang ngaruh besar buat performa."',
+    author: "Cerita Masdi",
+    role: "Content Creator & Affiliate Marketer",
+  },
+  {
+    quote:
+      '"Awalnya cuma pengen edit biasa, ternyata hasil akhirnya lebih rapi dan lebih enak ditonton dari ekspektasi. Transisi, musik, dan detail kecilnya berasa dipikirin."', 
+    author: "Rafi Maulana",
+    role: "Content Creator",
   },
 ];
 
@@ -25,18 +31,18 @@ export function AboutSection() {
 
   return (
     <section
-  id="about"
-  style={{
-    width: "100%",
-    padding: "100px 0 80px",
-    background: BG_MAIN,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    position: "relative",
-    overflow: "hidden",
-    scrollMarginTop: 80,
-  }}
->
+        id="about"
+        style={{
+          width: "100%",
+          padding: "100px 0 80px",
+          background: BG_MAIN,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          position: "relative",
+          overflow: "hidden",
+          scrollMarginTop: 80,
+        }}
+      >
       {/* Glow */}
       <div
         style={{
